@@ -1,16 +1,16 @@
 package Collections
 
-type KeyValueEnumerator[TKey comparable, TValue any] struct {
+type keyValueEnumerator[TKey comparable, TValue any] struct {
 	Index  int
 	Object map[TKey]TValue
 	Keys   []TKey
 }
 
-func (enumerator *KeyValueEnumerator[TKey, TValue]) Reset() {
+func (enumerator *keyValueEnumerator[TKey, TValue]) Reset() {
 	enumerator.Index = 0
 }
 
-func (enumerator *KeyValueEnumerator[TKey, TValue]) GetNext() (object KeyValue[TKey, TValue], ok bool) {
+func (enumerator *keyValueEnumerator[TKey, TValue]) GetNext() (object KeyValue[TKey, TValue], ok bool) {
 	if enumerator.Index < len(enumerator.Object) {
 		key := enumerator.Keys[enumerator.Index]
 		object = KeyValue[TKey, TValue]{

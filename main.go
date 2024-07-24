@@ -7,6 +7,17 @@ import (
 )
 
 func main() {
+	list := make(Collections.List[int], 0)
+	list.Add(4)
+	list.Add(5)
+	fmt.Println(list[0])
+	fmt.Println(list[1])
+	fmt.Println(len(list))
+	list.Add(7)
+	fmt.Println(len(list))
+	list.RemoveAt(2)
+	fmt.Println(len(list))
+
 	dictionary := make(Collections.Dictionary[int, string])
 	dictionary.Add(1, "ala")
 	dictionary.Add(2, "basia")
