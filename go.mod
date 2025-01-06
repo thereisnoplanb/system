@@ -1,3 +1,3 @@
-module github.com/golangframework/system
+module github.com/thereisnoplanb/system
 
 go 1.22.3
