@@ -1,20 +1,20 @@
 package errors
 
-type ArgumentOutOfRangeError struct {
+type FormatError struct {
 	argumentName string
 	message      string
 }
 
-func NewArgumentOutOfRangeError(argumentName string, message ...string) error {
-	return ArgumentOutOfRangeError{
+func NewFormatError(argumentName string, message ...string) error {
+	return FormatError{
 		argumentName: argumentName,
 		message:      getString(message),
 	}
 }
 
-func (err ArgumentOutOfRangeError) Error() string {
+func (err FormatError) Error() string {
 
-	result := "argument out of range"
+	result := "format"
 	if err.argumentName != "" {
 		result += ", argument name: " + err.argumentName
 	}
