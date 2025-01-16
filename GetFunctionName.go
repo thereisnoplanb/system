@@ -34,7 +34,7 @@ import (
 //	        fmt.Println("Function name:", name) // prints exampleFunction
 //	    }
 //	}
-func GetFunctionName(function ...interface{}) (name string, err error) {
+func GetFunctionName(function ...any) (name string, err error) {
 	var pc uintptr
 	if len(function) == 0 {
 		pc, _, _, _ = runtime.Caller(1)
